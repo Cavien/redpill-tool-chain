@@ -24,14 +24,20 @@ jobs:
       
       - name: Chmod
         run: chmod 0755 ./redpill_tool_chain.sh
+      - name: mpt2sas
         run: ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/mpt2sas/rpext-index.json
+      - name: hpsa
         run: ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/hpsa/rpext-index.json
+      - name: mpt3sas
         run: ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/mpt3sas/rpext-index.json
+      - name: 8168r
         run: ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/r8168/rpext-index.json
+      - name: 8169r
         run: ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/r8169/rpext-index.json
+      - name: vmxnet3
         run: ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/vmxnet3/rpext-index.json
 
-- name: Build docker image
+      - name: Build docker image
         run: ./redpill_tool_chain.sh build apollolake-7.0.1-42218
 
       - name: Create dsm image
